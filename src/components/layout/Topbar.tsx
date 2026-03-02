@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { Menu, Search, Bell, Clock } from 'lucide-react';
+import { Menu, Search, Bell, MapPin } from 'lucide-react';
 import { cn } from '../../lib/utils.ts';
 
 interface TopbarProps {
@@ -7,15 +7,15 @@ interface TopbarProps {
 }
 
 const pageTitles: Record<string, { title: string; breadcrumb: string }> = {
-  '/': { title: 'Factory Dashboard', breadcrumb: 'Home' },
-  '/production': { title: 'Production Planning', breadcrumb: 'Production' },
-  '/quality': { title: 'Quality Control', breadcrumb: 'Quality' },
-  '/supply-chain': { title: 'Supply Chain', breadcrumb: 'Supply Chain' },
-  '/dealers': { title: 'Dealer Network', breadcrumb: 'Dealers' },
-  '/inventory': { title: 'Parts Inventory', breadcrumb: 'Inventory' },
-  '/sales': { title: 'Sales & Dispatch', breadcrumb: 'Sales' },
+  '/': { title: 'Dealership Dashboard', breadcrumb: 'Home' },
+  '/vehicle-stock': { title: 'Vehicle Stock', breadcrumb: 'Stock' },
+  '/sales': { title: 'Sales & Bookings', breadcrumb: 'Sales' },
+  '/service': { title: 'Service Center', breadcrumb: 'Service' },
+  '/customers': { title: 'Customer Management', breadcrumb: 'Customers' },
+  '/finance': { title: 'Finance & Insurance', breadcrumb: 'Finance' },
+  '/test-drives': { title: 'Test Drives', breadcrumb: 'Test Drives' },
   '/reports': { title: 'Reports & Analytics', breadcrumb: 'Reports' },
-  '/compliance': { title: 'Compliance & Certifications', breadcrumb: 'Compliance' },
+  '/compliance': { title: 'Compliance & Licenses', breadcrumb: 'Compliance' },
   '/settings': { title: 'Settings', breadcrumb: 'Settings' },
 };
 
@@ -57,10 +57,10 @@ export default function Topbar({ onMobileToggle }: TopbarProps) {
           />
         </div>
 
-        {/* Shift indicator */}
+        {/* Showroom location */}
         <div className="hidden sm:flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full text-xs font-medium">
-          <Clock size={14} />
-          <span>Shift A - Morning</span>
+          <MapPin size={14} />
+          <span>Pune Showroom</span>
         </div>
 
         {/* Notifications */}

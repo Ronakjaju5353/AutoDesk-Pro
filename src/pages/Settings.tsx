@@ -5,7 +5,7 @@ import { cn } from '../lib/utils.ts';
 export default function Settings() {
   return (
     <div className="space-y-6">
-      {/* Company Profile */}
+      {/* Dealership Profile */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -16,33 +16,33 @@ export default function Settings() {
             <Building2 size={20} />
           </div>
           <div>
-            <h2 className="font-bold text-gray-900">Company Profile</h2>
-            <p className="text-xs text-gray-500">Manufacturer information</p>
+            <h2 className="font-bold text-gray-900">Dealership Profile</h2>
+            <p className="text-xs text-gray-500">Authorized dealership information</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Company Name</label>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Dealership Name</label>
             <input
               type="text"
-              defaultValue="AutoDesk Motors Pvt. Ltd."
+              defaultValue="AutoDesk Pro Motors - Pune"
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-gray-500 mb-1.5">CIN Number</label>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Brand Authorized</label>
             <input
               type="text"
-              defaultValue="U34100MH2020PTC123456"
+              defaultValue="AutoDesk Motors"
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Plant Location</label>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Showroom Address</label>
             <input
               type="text"
-              defaultValue="Chakan, Pune, Maharashtra 410501"
+              defaultValue="Plot 42, Baner Road, Pune, Maharashtra 411045"
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -55,10 +55,26 @@ export default function Settings() {
             />
           </div>
           <div>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Dealer Code</label>
+            <input
+              type="text"
+              defaultValue="ADM-PN-042"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Dealer Principal</label>
+            <input
+              type="text"
+              defaultValue="Shubham Deshmukh"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
             <label className="block text-xs font-semibold text-gray-500 mb-1.5">Contact Email</label>
             <input
               type="email"
-              defaultValue="admin@autodeskmotors.in"
+              defaultValue="info@autodeskpro-pune.in"
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -67,6 +83,22 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="+91 20 6789 0123"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Service Center Address</label>
+            <input
+              type="text"
+              defaultValue="Plot 43, Baner Road, Pune, Maharashtra 411045"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-gray-500 mb-1.5">Service Bays</label>
+            <input
+              type="text"
+              defaultValue="6 Bays"
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -82,12 +114,12 @@ export default function Settings() {
       {/* Settings Sections */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
-          { icon: <Users size={20} />, title: 'User Management', desc: 'Manage user roles, access levels, and permissions', color: 'from-purple-500 to-purple-600' },
-          { icon: <Bell size={20} />, title: 'Notifications', desc: 'Configure email, SMS, and in-app alert preferences', color: 'from-yellow-500 to-yellow-600' },
+          { icon: <Users size={20} />, title: 'User Management', desc: 'Manage salesperson accounts, service advisors, and admin roles', color: 'from-purple-500 to-purple-600' },
+          { icon: <Bell size={20} />, title: 'Notifications', desc: 'Configure booking alerts, delivery reminders, and service notifications', color: 'from-yellow-500 to-yellow-600' },
           { icon: <Shield size={20} />, title: 'Security', desc: 'Password policies, 2FA settings, and audit logs', color: 'from-red-500 to-red-600' },
           { icon: <Palette size={20} />, title: 'Appearance', desc: 'Theme preferences, language, and display settings', color: 'from-cyan-500 to-cyan-600' },
           { icon: <Database size={20} />, title: 'Data & Backup', desc: 'Automated backups, data retention, and export', color: 'from-green-500 to-green-600' },
-          { icon: <Building2 size={20} />, title: 'Plant Configuration', desc: 'Assembly lines, shifts, and capacity settings', color: 'from-indigo-500 to-indigo-600' },
+          { icon: <Building2 size={20} />, title: 'Showroom Configuration', desc: 'Display areas, test drive routes, and bay configuration', color: 'from-indigo-500 to-indigo-600' },
         ].map((section, i) => (
           <motion.div
             key={section.title}
@@ -131,7 +163,7 @@ export default function Settings() {
           </div>
           <div>
             <p className="text-gray-400">License</p>
-            <p className="font-semibold text-gray-700">Enterprise</p>
+            <p className="font-semibold text-gray-700">Dealership Pro</p>
           </div>
         </div>
       </motion.div>

@@ -12,12 +12,11 @@ const statusConfig: Record<string, { icon: React.ReactNode; color: string; bg: s
 
 const categoryColors: Record<string, string> = {
   'License': 'bg-blue-50 text-blue-700',
-  'Certification': 'bg-purple-50 text-purple-700',
-  'Emission': 'bg-green-50 text-green-700',
-  'Subsidy': 'bg-cyan-50 text-cyan-700',
-  'Quality': 'bg-indigo-50 text-indigo-700',
+  'Tax': 'bg-green-50 text-green-700',
   'Environment': 'bg-emerald-50 text-emerald-700',
   'Safety': 'bg-red-50 text-red-700',
+  'Authorization': 'bg-purple-50 text-purple-700',
+  'Insurance': 'bg-cyan-50 text-cyan-700',
 };
 
 const activeCount = complianceRecords.filter((r) => r.status === 'Active').length;
@@ -30,7 +29,7 @@ export default function Compliance() {
       {/* Summary */}
       <div className="grid grid-cols-3 gap-3 md:gap-4">
         {[
-          { label: 'Active Certifications', value: activeCount, icon: <ShieldCheck size={18} />, color: 'from-green-500 to-green-600' },
+          { label: 'Active Licenses', value: activeCount, icon: <ShieldCheck size={18} />, color: 'from-green-500 to-green-600' },
           { label: 'Expiring Soon', value: expiringCount, icon: <Clock size={18} />, color: 'from-yellow-500 to-yellow-600' },
           { label: 'Action Required', value: pendingCount, icon: <AlertTriangle size={18} />, color: 'from-red-500 to-red-600' },
         ].map((item, i) => (
@@ -51,7 +50,7 @@ export default function Compliance() {
       </div>
 
       {/* Expiring Soon Alert */}
-      {expiringCount > 0 && (
+      {(expiringCount > 0 || pendingCount > 0) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,7 +59,7 @@ export default function Compliance() {
         >
           <div className="flex items-center gap-2 mb-2">
             <AlertTriangle size={18} className="text-yellow-600" />
-            <h2 className="text-sm font-bold text-yellow-800">Upcoming Expirations</h2>
+            <h2 className="text-sm font-bold text-yellow-800">Upcoming Expirations / Renewals</h2>
           </div>
           <div className="flex flex-wrap gap-2">
             {complianceRecords
@@ -88,7 +87,7 @@ export default function Compliance() {
         className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
       >
         <div className="p-5 border-b border-gray-100">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Compliance & Certification Tracker</h2>
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Dealership Compliance Tracker</h2>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[800px]">
@@ -96,7 +95,7 @@ export default function Compliance() {
               <tr className="bg-gray-50">
                 <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">ID</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Name</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Authority</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Issuing Authority</th>
                 <th className="text-center px-4 py-3 text-xs font-semibold text-gray-500">Category</th>
                 <th className="text-center px-4 py-3 text-xs font-semibold text-gray-500">Status</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Valid Until</th>
